@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عروض عمرة رمضان 1447 | وكالة بوشوشة</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Tajawal',Tahoma,Arial,sans-serif;
+  background:#1e1b18;
+  color:#fff;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:linear-gradient(135deg,#2a211b,#1e1b18);
+  padding:30px 20px;
+  text-align:center;
+}
+header img{
+  width:90px;
+  margin-bottom:10px;
+}
+header h1{
+  margin:10px 0 5px;
+  color:#f5b041;
+}
+header p{
+  opacity:.9;
+  font-size:15px;
+}
+
+/* ===== SECTION ===== */
+.section{
+  padding:30px 20px;
+  max-width:900px;
+  margin:auto;
+}
+
+/* ===== OFFERS ===== */
+.offers{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.card{
+  background:#2a211b;
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 6px 18px rgba(0,0,0,.4);
+}
+.card h3{
+  color:#f5b041;
+  margin-top:0;
+}
+.card button{
+  margin-top:15px;
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#f5b041;
+  color:#000;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* ===== INFO ===== */
+.info{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+.info div{
+  background:#2a211b;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+}
+
+/* ===== FORM ===== */
+form{
+  background:#2a211b;
+  padding:25px;
+  border-radius:16px;
+  margin-top:30px;
+}
+form h2{
+  text-align:center;
+  color:#f5b041;
+}
+input,select{
+  width:100%;
+  padding:14px;
+  margin:10px 0;
+  border-radius:10px;
+  border:none;
+  font-size:16px;
+}
+button.submit{
+  width:100%;
+  padding:14px;
+  background:#f5b041;
+  color:#000;
+  border:none;
+  border-radius:12px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.success{
+  display:none;
+  background:#1d8348;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+  margin-top:15px;
+}
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+  opacity:.8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="https://i.ibb.co/4VbqH1Z/kaaba.png" alt="logo">
+  <h1>عروض عمرة رمضان 1447 هـ</h1>
+  <p>وكالة بوشوشة للسياحة و السفر</p>
+</header>
+
+<section class="section">
+  <h2 style="color:#f5b041;text-align:center">📌 اختر عرضك</h2>
+
+  <div class="offers">
+    <div class="card">
+      <h3>أسبوع شعبان + أسبوع رمضان</h3>
+      <button onclick="selectOffer(this)">سجل الآن</button>
+    </div>
+    <div class="card">
+      <h3>أوائل رمضان</h3>
+      <button onclick="selectOffer(this)">سجل الآن</button>
+    </div>
+    <div class="card">
+      <h3>أواخر رمضان</h3>
+      <button onclick="selectOffer(this)">سجل الآن</button>
+    </div>
+    <div class="card">
+      <h3>شهر رمضان كامل</h3>
+      <button onclick="selectOffer(this)">سجل الآن</button>
+    </div>
+  </div>
+
+  <h2 style="color:#f5b041;text-align:center;margin-top:40px">✈️ ماذا تتضمن الرحلة</h2>
+  <div class="info">
+    <div>✔ تأشيرة</div>
+    <div>✔ تذكرة طيران ذهاب وعودة</div>
+    <div>✔ مرشدين معتمدين</div>
+    <div>✔ إقامة مريحة بالفنادق</div>
+  </div>
+
+  <form id="form">
+    <h2>📝 تسجيل سريع</h2>
+    <input type="text" id="name" placeholder="الاسم الكامل" required>
+    <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+    <input type="text" id="wilaya" placeholder="الولاية" required>
+    <select id="offer" required>
+      <option value="">اختر العرض</option>
+      <option>أسبوع شعبان + أسبوع رمضان</option>
+      <option>أوائل رمضان</option>
+      <option>أواخر رمضان</option>
+      <option>شهر رمضان كامل</option>
+    </select>
+    <button class="submit" type="submit">تأكيد التسجيل</button>
+    <div class="success" id="success">✅ تم تسجيلك بنجاح، سنتصل بك قريبًا</div>
+  </form>
+</section>
+
+<footer>
+📞 0660059521 – مقر الوكالة قرب بلدية الرويسات
+</footer>
+
+<script>
+function selectOffer(btn){
+  const offer = btn.parentElement.querySelector("h3").innerText;
+  document.getElementById("offer").value = offer;
+  document.getElementById("form").scrollIntoView({behavior:"smooth"});
+}
+
+document.getElementById("form").addEventListener("submit",function(e){
+  e.preventDefault();
+  document.getElementById("success").style.display="block";
+  this.reset();
+});
+</script>
+
+</body>
+  </html>
