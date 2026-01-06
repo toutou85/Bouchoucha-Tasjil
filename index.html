@@ -203,6 +203,38 @@ document.getElementById("form").addEventListener("submit",function(e){
   this.reset();
 });
 </script>
+<script>
+const SCRIPT_URL = "PUT_YOUR_URL_HERE";
+
+function selectOffer(btn){
+  const offer = btn.parentElement.querySelector("h3").innerText;
+  document.getElementById("offer").value = offer;
+  document.getElementById("form").scrollIntoView({behavior:"smooth"});
+}
+
+document.getElementById("form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    wilaya: document.getElementById("wilaya").value,
+    offer: document.getElementById("offer").value
+  };
+
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(res => {
+    if(res.status === "success"){
+      document.getElementById("success").style.display = "block";
+      document.getElementById("form").reset();
+    }
+  });
+});
+</script>
 
 </body>
   </html>
