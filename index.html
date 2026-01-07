@@ -29,18 +29,41 @@ header h1{margin:4px 0;color:#ffca28;font-size:22px}
 header p{font-size:14px;opacity:.9}
 
 /* MENU */
-.menu-btn{position:absolute;right:15px;top:20px;font-size:26px;cursor:pointer}
+.menu-btn{
+  position:absolute;
+  right:15px;
+  top:20px;
+  font-size:26px;
+  cursor:pointer;
+  z-index:1100
+}
 .sidebar{
-  position:fixed;top:0;right:-260px;width:260px;height:100%;
-  background:#1f1b18;padding:20px;transition:.3s;z-index:1000
+  position:fixed;
+  top:0;
+  right:-260px;
+  width:260px;
+  height:100%;
+  background:#1f1b18;
+  padding:20px;
+  transition:.3s;
+  z-index:1000
 }
 .sidebar.active{right:0}
 .sidebar h3{color:#ffca28;margin-top:0}
 .sidebar a{
-  display:block;padding:12px 0;color:#fff;text-decoration:none;
+  display:block;
+  padding:12px 0;
+  color:#fff;
+  text-decoration:none;
   border-bottom:1px solid rgba(255,255,255,.1)
 }
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999}
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:999
+}
 .overlay.active{display:block}
 
 /* SECTION */
@@ -61,7 +84,8 @@ header p{font-size:14px;opacity:.9}
 .card h3{margin-top:0;color:#ffca28;font-size:16px}
 .card button{
   margin-top:10px;width:100%;padding:12px;
-  border:none;border-radius:10px;font-size:15px;font-weight:bold;cursor:pointer
+  border:none;border-radius:10px;
+  font-size:15px;font-weight:bold;cursor:pointer
 }
 .btn-main{background:#ffca28;color:#000}
 
@@ -74,18 +98,45 @@ form{
 }
 form h2{text-align:center;color:#ffca28;margin-top:0}
 input,textarea{
-  width:100%;padding:13px;margin:9px 0;
-  border:none;border-radius:10px;font-size:15px
+  width:100%;
+  padding:13px;
+  margin:9px 0;
+  border:none;
+  border-radius:10px;
+  font-size:15px
 }
 textarea{resize:none}
 button.submit{
-  width:100%;padding:14px;background:#ffca28;color:#000;
-  border-radius:12px;font-size:18px;font-weight:bold;cursor:pointer
+  width:100%;
+  padding:14px;
+  background:#ffca28;
+  color:#000;
+  border-radius:12px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer
 }
 
-.msg{display:none;margin-top:12px;padding:14px;border-radius:10px;text-align:center}
+.msg{
+  display:none;
+  margin-top:12px;
+  padding:14px;
+  border-radius:10px;
+  text-align:center;
+  font-size:14px;
+}
 .loading{background:#f39c12;color:#000}
 .success{background:#1e8449}
+
+/* NOTE */
+.note{
+  margin-top:12px;
+  background:#2c2c2c;
+  padding:12px;
+  border-radius:10px;
+  font-size:14px;
+  line-height:1.8;
+}
 
 /* FOOTER */
 footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
@@ -101,6 +152,7 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
   <a href="#">الرئيسية</a>
   <a href="license.html">صفحة الترخيص</a>
 </div>
+
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <header>
@@ -165,14 +217,25 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
 <input type="text" name="wilaya" placeholder="الولاية" required>
 
 <input type="text" name="offer" id="offer" placeholder="العرض المختار" readonly required>
-
-<textarea name="details" id="details" rows="5" readonly
-placeholder="تفاصيل الرحلة"></textarea>
+<textarea name="details" id="details" rows="5" readonly placeholder="تفاصيل الرحلة"></textarea>
 
 <button type="submit" class="submit">تأكيد التسجيل</button>
 
-<div class="msg loading" id="loading">⏳ جاري إرسال التسجيل…</div>
-<div class="msg success" id="success">✅ تم تسجيلك بنجاح</div>
+<div class="msg loading" id="loading">
+⏳ جاري إرسال التسجيل…<br>
+🌿 لا تنسَ الاستغفار: <b>أستغفر الله العظيم</b>
+</div>
+
+<div class="msg success" id="success">
+✅ تم تسجيلك بنجاح
+</div>
+
+<div class="note">
+⚠️ <b>ملاحظة هامة:</b><br>
+التسجيل <b>أولي فقط</b> ولا يُعد تأكيدًا نهائيًا.<br>
+يتم التأكيد بعد <b>دفع المبلغ</b> و<b>إرسال نسخة من جواز السفر</b>.
+</div>
+
 </form>
 
 </section>
@@ -190,8 +253,14 @@ const details=document.getElementById("details");
 const loading=document.getElementById("loading");
 const success=document.getElementById("success");
 
-function openMenu(){sidebar.classList.add("active");overlay.classList.add("active")}
-function closeMenu(){sidebar.classList.remove("active");overlay.classList.remove("active")}
+function openMenu(){
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+}
+function closeMenu(){
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+}
 
 function selectOffer(name,go,back,price){
   offer.value=name;
