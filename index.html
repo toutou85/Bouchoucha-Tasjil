@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> وكالة بوشوشة للسياحة و السفر ترخيص رقم 083  | Bouchoucha Tasjil</title>
+<title>وكالة بوشوشة للسياحة و السفر | ترخيص رقم 083</title>
 
 <style>
 *{box-sizing:border-box}
@@ -32,16 +32,15 @@ header img{width:90px;margin-bottom:8px}
 header h1{margin:4px 0;color:#ffca28;font-size:22px}
 header p{font-size:14px;opacity:.9}
 
-/* ===== MENU BUTTON ===== */
+/* ===== MENU ===== */
 .menu-btn{
   position:absolute;
   right:15px;
   top:20px;
   font-size:26px;
   cursor:pointer;
+  z-index:1100;
 }
-
-/* ===== SIDEBAR ===== */
 .sidebar{
   position:fixed;
   top:0;
@@ -54,10 +53,7 @@ header p{font-size:14px;opacity:.9}
   z-index:1000;
 }
 .sidebar.active{right:0}
-.sidebar h3{
-  color:#ffca28;
-  margin-top:0;
-}
+.sidebar h3{color:#ffca28;margin-top:0}
 .sidebar a{
   display:block;
   padding:12px 0;
@@ -80,16 +76,15 @@ header p{font-size:14px;opacity:.9}
 /* ===== OFFERS ===== */
 .offers{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:15px;
 }
 .card{
-  background:rgba(34,30,28,.85);
+  background:rgba(34,30,28,.9);
   border-radius:14px;
   padding:18px;
-  box-shadow:0 8px 22px rgba(0,0,0,.4);
 }
-.card h3{margin-top:0;color:#ffca28;font-size:17px}
+.card h3{margin-top:0;color:#ffca28;font-size:16px}
 .card button{
   margin-top:10px;
   width:100%;
@@ -172,14 +167,6 @@ button.submit{
   cursor:pointer;
   font-size:20px;
 }
-.menu-btn{
-  position:absolute;
-  right:15px;
-  top:20px;
-  font-size:26px;
-  cursor:pointer;
-  z-index:1100; /* ← أضف هذا */
-}
 
 /* ===== FOOTER ===== */
 footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
@@ -193,15 +180,14 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
 <div class="sidebar" id="sidebar">
   <h3>القائمة</h3>
   <a href="#">الرئيسية</a>
-<a href="license.html">صفحة الترخيص</a>
+  <a href="license.html">صفحة الترخيص</a>
   <a href="#">تفاصيل الرحلات</a>
 </div>
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <header>
   <img src="https://i.supaimg.com/aad0b4f2-be90-4913-86fa-fdee62aa4625.png">
-  <h1>وكالة بوشوشة للسياحة و السفر                    
-    ترخيص رقم 083</h1>
+  <h1>وكالة بوشوشة للسياحة و السفر<br>ترخيص رقم 083</h1>
   <p>Bouchoucha Tasjil - تسجيل عروض العمرة</p>
 </header>
 
@@ -210,21 +196,9 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
 <h2 style="text-align:center;color:#ffca28">📌 عروض العمرة</h2>
 
 <div class="offers">
-  <div class="card">
-    <h3> عمرة رجب و شعبان 19 فيفري _ 05 مارس ✅</h3>
-    <button class="btn-main" onclick="selectOffer(this)">سجل الآن</button>
-    <button class="btn-details" onclick="showDetails('تفاصيل رحلة رجب و شعبان <b> السعر 225000<br>سجى غزة 750 م عن الحرم: فندق ★')">تفاصيل الرحلة</button>
-  </div>
 
-<div class="offers">
   <div class="card">
-    <h3>أسبوع شعبان + أسبوع رمضان✅</h3>
-    <button class="btn-main" onclick="selectOffer(this)">سجل الآن</button>
-    <button class="btn-details" onclick="showDetails('تفاصيل رحلة شعبان + رمضان<br>السعر يبدأ من 19 مليون<br>الإقامة: فندق 4★')">تفاصيل الرحلة</button>
-  </div>
-
-<div class="card">
-    <h3>15 يوم الأولى – شعبان ✅</h3>
+    <h3>15 يوم الأولى – شعبان</h3>
     <button class="btn-main" onclick="selectOffer(this)">سجل الآن</button>
     <button class="btn-details" onclick="showDetails(`
       <b>المدة:</b> 15 يوم<br>
@@ -236,9 +210,8 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
     `)">تفاصيل الرحلة</button>
   </div>
 
-  <!-- 15 يوم الأخيرة -->
   <div class="card">
-    <h3>15 يوم الأخيرة – شعبان / رمضان ✅</h3>
+    <h3>15 يوم الأخيرة – شعبان / رمضان</h3>
     <button class="btn-main" onclick="selectOffer(this)">سجل الآن</button>
     <button class="btn-details" onclick="showDetails(`
       <b>المدة:</b> 15 يوم<br>
@@ -250,9 +223,8 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
     `)">تفاصيل الرحلة</button>
   </div>
 
-  <!-- شهر رمضان كامل -->
   <div class="card">
-    <h3>شهر رمضان كامل ✅</h3>
+    <h3>شهر رمضان كامل</h3>
     <button class="btn-main" onclick="selectOffer(this)">سجل الآن</button>
     <button class="btn-details" onclick="showDetails(`
       <b>المدة:</b> شهر كامل<br>
@@ -265,28 +237,30 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
   </div>
 
 </div>
+
 <div class="info">
   <div>✔ تأشيرة</div>
   <div>✔ تذكرة طيران</div>
-  <div>✔ مرشدين معتمدين</div>
   <div>✔ إقامة فندقية</div>
+  <div>✔ مرشدين معتمدين</div>
 </div>
 
 <form id="form">
 <h2>📝 تسجيل سريع</h2>
-<input type="text" id="name" placeholder="الاسم الكامل" required>
-<input type="tel" id="phone" placeholder="رقم الهاتف" required>
-<input type="text" id="wilaya" placeholder="الولاية" required>
-<select id="offer" required>
-<option value="">اختر العرض</option>
-<option>رجب و شعبان</option>
-<option>أسبوع شعبان + أسبوع رمضان</option>
-<option>أوائل رمضان</option>
-<option>أواخر رمضان</option>
-<option>شهر رمضان كامل</option>
+
+<input type="text" name="name" id="name" placeholder="الاسم الكامل" required>
+<input type="tel" name="phone" id="phone" placeholder="رقم الهاتف" required>
+<input type="text" name="wilaya" id="wilaya" placeholder="الولاية" required>
+
+<select name="offer" id="offer" required>
+  <option value="">اختر العرض</option>
+  <option>15 يوم الأولى – شعبان</option>
+  <option>15 يوم الأخيرة – شعبان / رمضان</option>
+  <option>شهر رمضان كامل</option>
 </select>
-<button class="submit">تأكيد التسجيل</button>
-<div class="success" id="success">✅ تم تسجيلك بنجاح</div>
+
+<button type="submit" class="submit">تأكيد التسجيل</button>
+<div class="success" id="success">✅ تم تسجيلك بنجاح، سنتصل بك قريبًا</div>
 </form>
 
 </section>
@@ -304,13 +278,13 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
 <script>
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbyo4W3SecWeN58wKd9FE_RWkaF2higB-YmsdYFlRGhuqf9UBxDereqdGcuSOqcTPjEp/exec";
 
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
-const form = document.getElementById("form");
-const offer = document.getElementById("offer");
-const success = document.getElementById("success");
-const modal = document.getElementById("modal");
-const modalText = document.getElementById("modalText");
+const sidebar=document.getElementById("sidebar");
+const overlay=document.getElementById("overlay");
+const form=document.getElementById("form");
+const offer=document.getElementById("offer");
+const success=document.getElementById("success");
+const modal=document.getElementById("modal");
+const modalText=document.getElementById("modalText");
 
 function openMenu(){
   sidebar.classList.add("active");
@@ -328,13 +302,24 @@ function showDetails(text){
   modalText.innerHTML=text;
   modal.style.display="block";
 }
-function closeDetails(){modal.style.display="none"}
+function closeDetails(){
+  modal.style.display="none";
+}
 
 form.addEventListener("submit",e=>{
   e.preventDefault();
-  const fd=new FormData(form);
-  fetch(SCRIPT_URL,{method:"POST",body:fd})
-  .then(()=>{success.style.display="block";form.reset()})
+  fetch(SCRIPT_URL,{
+    method:"POST",
+    body:new FormData(form)
+  })
+  .then(r=>r.text())
+  .then(()=>{
+    success.style.display="block";
+    form.reset();
+  })
+  .catch(()=>{
+    alert("❌ حدث خطأ أثناء الإرسال");
+  });
 });
 </script>
 
