@@ -3,45 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عروض عمرة رمضان 1447 | وكالة بوشوشة</title>
+<title>Bouchoucha Tasjil | تسجيل عروض العمرة</title>
 
 <style>
 *{box-sizing:border-box}
-
-/* ===== BODY + BACKGROUND ===== */
 body{
   margin:0;
   font-family:'Tajawal',Tahoma,Arial,sans-serif;
-  background:url("https://i.supaimg.com/63532692-62f8-4655-bf8e-69780f96e713.jpg") no-repeat center fixed;
-  background-size:cover;
+  background:#1e1b18;
   color:#fff;
-}
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.45);
-  z-index:-1;
 }
 
 /* ===== HEADER ===== */
 header{
-  background:rgba(0,0,0,.55);
-  backdrop-filter:blur(6px);
+  background:linear-gradient(135deg,#2a211b,#1e1b18);
   padding:30px 20px;
   text-align:center;
 }
-header img{
-  width:90px;
-  margin-bottom:10px;
-}
 header h1{
-  margin:10px 0 5px;
+  margin:0;
   color:#f5b041;
+  font-size:26px;
 }
 header p{
-  opacity:.9;
+  margin-top:8px;
   font-size:15px;
+  opacity:.9;
 }
 
 /* ===== SECTION ===== */
@@ -58,7 +45,7 @@ header p{
   gap:20px;
 }
 .card{
-  background:rgba(0,0,0,.55);
+  background:#2a211b;
   border-radius:14px;
   padding:20px;
   box-shadow:0 6px 18px rgba(0,0,0,.4);
@@ -85,10 +72,10 @@ header p{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:15px;
-  margin-top:20px;
+  margin-top:25px;
 }
 .info div{
-  background:rgba(0,0,0,.55);
+  background:#2a211b;
   padding:15px;
   border-radius:12px;
   text-align:center;
@@ -96,14 +83,15 @@ header p{
 
 /* ===== FORM ===== */
 form{
-  background:rgba(0,0,0,.6);
+  background:#2a211b;
   padding:25px;
   border-radius:16px;
-  margin-top:30px;
+  margin-top:35px;
 }
 form h2{
   text-align:center;
   color:#f5b041;
+  margin-bottom:15px;
 }
 input,select{
   width:100%;
@@ -132,6 +120,7 @@ button.submit{
   border-radius:10px;
   text-align:center;
   margin-top:15px;
+  font-size:16px;
 }
 
 /* ===== FOOTER ===== */
@@ -139,8 +128,7 @@ footer{
   text-align:center;
   padding:20px;
   font-size:14px;
-  background:rgba(0,0,0,.55);
-  opacity:.9;
+  opacity:.8;
 }
 </style>
 </head>
@@ -148,13 +136,13 @@ footer{
 <body>
 
 <header>
-  <img src="https://i.supaimg.com/aad0b4f2-be90-4913-86fa-fdee62aa4625.png" alt="logo">
-  <h1>عروض عمرة رمضان 1447 هـ</h1>
-  <p>وكالة بوشوشة للسياحة و السفر</p>
+  <h1>Bouchoucha Tasjil</h1>
+  <p>التسجيل الرسمي لعروض العمرة</p>
 </header>
 
 <section class="section">
-  <h2 style="color:#f5b041;text-align:center">📌 اختر عرضك</h2>
+
+  <h2 style="color:#f5b041;text-align:center">📌 اختر العرض</h2>
 
   <div class="offers">
     <div class="card">
@@ -178,16 +166,18 @@ footer{
   <h2 style="color:#f5b041;text-align:center;margin-top:40px">✈️ ماذا تتضمن الرحلة</h2>
   <div class="info">
     <div>✔ تأشيرة</div>
-    <div>✔ تذكرة طيران ذهاب وعودة</div>
+    <div>✔ تذكرة طيران</div>
     <div>✔ مرشدين معتمدين</div>
-    <div>✔ إقامة مريحة بالفنادق</div>
+    <div>✔ إقامة فندقية</div>
   </div>
 
   <form id="form">
     <h2>📝 تسجيل سريع</h2>
+
     <input type="text" id="name" placeholder="الاسم الكامل" required>
     <input type="tel" id="phone" placeholder="رقم الهاتف" required>
     <input type="text" id="wilaya" placeholder="الولاية" required>
+
     <select id="offer" required>
       <option value="">اختر العرض</option>
       <option>أسبوع شعبان + أسبوع رمضان</option>
@@ -195,17 +185,22 @@ footer{
       <option>أواخر رمضان</option>
       <option>شهر رمضان كامل</option>
     </select>
+
     <button class="submit" type="submit">تأكيد التسجيل</button>
-    <div class="success" id="success">✅ تم تسجيلك بنجاح، سنتصل بك قريبًا</div>
+
+    <div class="success" id="success">
+      ✅ تم تسجيلك بنجاح، سنتصل بك قريبًا
+    </div>
   </form>
+
 </section>
 
 <footer>
-📞 0660059521 – مقر الوكالة قرب بلدية الرويسات
+© Bouchoucha Tasjil – جميع الحقوق محفوظة
 </footer>
 
 <script>
-const SCRIPT_URL = "PUT_YOUR_URL_HERE";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby9WgnFLxf_6ych5In2KaTWki3ml5WHfTBmwuhnLlnwMZdAcikFIgu7OfG3-ZV4JR5K/exec";
 
 function selectOffer(btn){
   const offer = btn.parentElement.querySelector("h3").innerText;
@@ -223,17 +218,21 @@ document.getElementById("form").addEventListener("submit", function(e){
     offer: document.getElementById("offer").value
   };
 
-  fetch(SCRIPT_URL,{
-    method:"POST",
-    body:JSON.stringify(data)
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
   })
-  .then(res=>res.json())
-  .then(res=>{
-    if(res.status==="success"){
-      document.getElementById("success").style.display="block";
+  .then(res => res.json())
+  .then(res => {
+    if(res.status === "success"){
+      document.getElementById("success").style.display = "block";
       document.getElementById("form").reset();
+    } else {
+      alert("حدث خطأ أثناء الإرسال");
     }
-  });
+  })
+  .catch(() => alert("فشل الاتصال بالخادم"));
 });
 </script>
 
