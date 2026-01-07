@@ -3,59 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bouchoucha Tasjil | تسجيل عروض العمرة</title>
+<title>Bouchoucha Tasjil | وكالة بوشوشة للسياحة و السفر</title>
 
 <style>
 *{box-sizing:border-box}
 body{
   margin:0;
   font-family:'Tajawal',Tahoma,Arial,sans-serif;
-  background:#1e1b18;
+  background:url("https://i.postimg.cc/mk1k1LW3/FB-IMG-1757788923321.jpg") no-repeat center fixed;
+  background-size:cover;
   color:#fff;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:-1;
 }
 
 /* ===== HEADER ===== */
 header{
-  background:linear-gradient(135deg,#2a211b,#1e1b18);
-  padding:30px 20px;
   text-align:center;
+  padding:25px 15px 15px;
+}
+header img{
+  width:90px;
+  height:auto;
+  margin-bottom:10px;
 }
 header h1{
-  margin:0;
+  margin:5px 0 0;
   color:#f5b041;
-  font-size:26px;
+  font-size:24px;
 }
 header p{
-  margin-top:8px;
-  font-size:15px;
+  margin-top:6px;
+  font-size:14px;
   opacity:.9;
 }
 
 /* ===== SECTION ===== */
 .section{
-  padding:30px 20px;
   max-width:900px;
   margin:auto;
+  padding:20px;
 }
 
 /* ===== OFFERS ===== */
 .offers{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  gap:18px;
 }
 .card{
-  background:#2a211b;
-  border-radius:14px;
+  background:rgba(30,27,24,.9);
+  border-radius:16px;
   padding:20px;
-  box-shadow:0 6px 18px rgba(0,0,0,.4);
+  box-shadow:0 8px 22px rgba(0,0,0,.4);
 }
 .card h3{
-  color:#f5b041;
   margin-top:0;
+  color:#f5b041;
+  font-size:18px;
 }
 .card button{
-  margin-top:15px;
+  margin-top:14px;
   width:100%;
   padding:12px;
   border:none;
@@ -71,27 +84,27 @@ header p{
 .info{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-  margin-top:25px;
+  gap:14px;
+  margin:30px 0;
 }
 .info div{
-  background:#2a211b;
-  padding:15px;
+  background:rgba(30,27,24,.9);
+  padding:14px;
   border-radius:12px;
   text-align:center;
+  font-size:15px;
 }
 
 /* ===== FORM ===== */
 form{
-  background:#2a211b;
+  background:rgba(30,27,24,.95);
   padding:25px;
-  border-radius:16px;
-  margin-top:35px;
+  border-radius:18px;
 }
 form h2{
   text-align:center;
   color:#f5b041;
-  margin-bottom:15px;
+  margin-top:0;
 }
 input,select{
   width:100%;
@@ -116,7 +129,7 @@ button.submit{
 .success{
   display:none;
   background:#1d8348;
-  padding:15px;
+  padding:14px;
   border-radius:10px;
   text-align:center;
   margin-top:15px;
@@ -127,8 +140,8 @@ button.submit{
 footer{
   text-align:center;
   padding:20px;
-  font-size:14px;
-  opacity:.8;
+  font-size:13px;
+  opacity:.85;
 }
 </style>
 </head>
@@ -136,13 +149,15 @@ footer{
 <body>
 
 <header>
-  <h1>Bouchoucha Tasjil</h1>
-  <p>التسجيل الرسمي لعروض العمرة</p>
+  <!-- 🔴 ضع رابط لوقو الوكالة هنا -->
+  <img src="https://i.ibb.co/4VbqH1Z/kaaba.png" alt="Logo">
+  <h1>وكالة بوشوشة للسياحة و السفر</h1>
+  <p>Bouchoucha Tasjil – التسجيل الرسمي لعروض العمرة</p>
 </header>
 
 <section class="section">
 
-  <h2 style="color:#f5b041;text-align:center">📌 اختر العرض</h2>
+  <h2 style="color:#f5b041;text-align:center">📌 عروض العمرة</h2>
 
   <div class="offers">
     <div class="card">
@@ -163,7 +178,6 @@ footer{
     </div>
   </div>
 
-  <h2 style="color:#f5b041;text-align:center;margin-top:40px">✈️ ماذا تتضمن الرحلة</h2>
   <div class="info">
     <div>✔ تأشيرة</div>
     <div>✔ تذكرة طيران</div>
@@ -196,11 +210,11 @@ footer{
 </section>
 
 <footer>
-© Bouchoucha Tasjil – جميع الحقوق محفوظة
+© وكالة بوشوشة للسياحة و السفر – جميع الحقوق محفوظة
 </footer>
 
 <script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby9WgnFLxf_6ych5In2KaTWki3ml5WHfTBmwuhnLlnwMZdAcikFIgu7OfG3-ZV4JR5K/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyXpTALMjnXKyxlN5WzRABxoRahc2axda7hfSw4yPToWOCyaoXvInSX0nBKXDeflyTI/exec";
 
 function selectOffer(btn){
   const offer = btn.parentElement.querySelector("h3").innerText;
@@ -211,26 +225,19 @@ function selectOffer(btn){
 document.getElementById("form").addEventListener("submit", function(e){
   e.preventDefault();
 
-  const data = {
-    name: document.getElementById("name").value,
-    phone: document.getElementById("phone").value,
-    wilaya: document.getElementById("wilaya").value,
-    offer: document.getElementById("offer").value
-  };
+  const formData = new FormData();
+  formData.append("name", document.getElementById("name").value);
+  formData.append("phone", document.getElementById("phone").value);
+  formData.append("wilaya", document.getElementById("wilaya").value);
+  formData.append("offer", document.getElementById("offer").value);
 
   fetch(SCRIPT_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
+    body: formData
   })
-  .then(res => res.json())
-  .then(res => {
-    if(res.status === "success"){
-      document.getElementById("success").style.display = "block";
-      document.getElementById("form").reset();
-    } else {
-      alert("حدث خطأ أثناء الإرسال");
-    }
+  .then(() => {
+    document.getElementById("success").style.display = "block";
+    document.getElementById("form").reset();
   })
   .catch(() => alert("فشل الاتصال بالخادم"));
 });
