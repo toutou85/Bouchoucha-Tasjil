@@ -23,57 +23,12 @@ body::before{
 }
 
 /* ===== HEADER ===== */
-header{
-  text-align:center;
-  padding:20px 15px;
-  position:relative;
-}
-header img{width:90px;margin-bottom:8px}
-header h1{margin:4px 0;color:#ffca28;font-size:22px}
-header p{font-size:14px;opacity:.9}
-
-/* ===== MENU ===== */
-.menu-btn{
-  position:absolute;
-  right:15px;
-  top:20px;
-  font-size:26px;
-  cursor:pointer;
-  z-index:1100;
-}
-.sidebar{
-  position:fixed;
-  top:0;
-  right:-260px;
-  width:260px;
-  height:100%;
-  background:#1f1b18;
-  padding:20px;
-  transition:.3s;
-  z-index:1000;
-}
-.sidebar.active{right:0}
-.sidebar h3{color:#ffca28;margin-top:0}
-.sidebar a{
-  display:block;
-  padding:12px 0;
-  color:#fff;
-  text-decoration:none;
-  border-bottom:1px solid rgba(255,255,255,.1);
-}
-.overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  z-index:999;
-}
-.overlay.active{display:block}
-
-/* ===== SECTION ===== */
-.section{max-width:900px;margin:auto;padding:15px}
+header{text-align:center;padding:20px}
+header img{width:90px}
+header h1{color:#ffca28;font-size:22px}
 
 /* ===== OFFERS ===== */
+.section{max-width:900px;margin:auto;padding:15px}
 .offers{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -81,114 +36,72 @@ header p{font-size:14px;opacity:.9}
 }
 .card{
   background:rgba(34,30,28,.9);
-  border-radius:14px;
   padding:18px;
+  border-radius:14px;
 }
-.card h3{margin-top:0;color:#ffca28;font-size:16px}
+.card h3{color:#ffca28;font-size:16px}
 .card button{
-  margin-top:10px;
   width:100%;
   padding:12px;
+  margin-top:8px;
   border:none;
   border-radius:10px;
-  font-size:15px;
-  font-weight:bold;
   cursor:pointer;
 }
 .btn-main{background:#ffca28;color:#000}
 .btn-details{background:#444;color:#fff}
 
-/* ===== INFO ===== */
-.info{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:12px;
-  margin:25px 0;
-}
-.info div{
-  background:rgba(34,30,28,.9);
-  padding:14px;
-  border-radius:10px;
-  text-align:center;
-}
-
 /* ===== FORM ===== */
 form{
   background:rgba(34,30,28,.95);
-  padding:22px 18px;
+  padding:22px;
   border-radius:16px;
+  margin-top:25px;
 }
-form h2{text-align:center;color:#ffca28;margin-top:0}
+form h2{text-align:center;color:#ffca28}
 input,select{
   width:100%;
   padding:13px;
   margin:9px 0;
   border:none;
   border-radius:10px;
-  font-size:16px;
 }
 button.submit{
   width:100%;
   padding:14px;
   background:#ffca28;
-  color:#000;
-  border-radius:12px;
   font-size:18px;
-  font-weight:bold;
+  border:none;
+  border-radius:12px;
   cursor:pointer;
 }
-.success{
+
+/* ===== MESSAGES ===== */
+.msg{
   display:none;
-  background:#1e8449;
-  padding:14px;
-  border-radius:10px;
   text-align:center;
-  margin-top:12px;
+  padding:12px;
+  border-radius:10px;
+  margin-top:10px;
 }
-
-/* ===== MODAL ===== */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  z-index:2000;
+.loading{background:#f39c12}
+.success{background:#1e8449}
+.note{
+  margin-top:15px;
+  background:#2c2c2c;
+  padding:12px;
+  border-radius:10px;
+  font-size:14px;
+  line-height:1.8;
 }
-.modal-content{
-  background:#2a2420;
-  max-width:420px;
-  margin:60px auto;
-  padding:20px;
-  border-radius:14px;
-}
-.modal-content h3{color:#ffca28;margin-top:0}
-.close{
-  text-align:left;
-  cursor:pointer;
-  font-size:20px;
-}
-
-/* ===== FOOTER ===== */
-footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
 </style>
 </head>
 
 <body>
 
-<div class="menu-btn" onclick="openMenu()">☰</div>
-
-<div class="sidebar" id="sidebar">
-  <h3>القائمة</h3>
-  <a href="#">الرئيسية</a>
-  <a href="license.html">صفحة الترخيص</a>
-  <a href="#">تفاصيل الرحلات</a>
-</div>
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
-
 <header>
   <img src="https://i.supaimg.com/aad0b4f2-be90-4913-86fa-fdee62aa4625.png">
   <h1>وكالة بوشوشة للسياحة و السفر<br>ترخيص رقم 083</h1>
-  <p>Bouchoucha Tasjil - تسجيل عروض العمرة</p>
 </header>
 
 <section class="section">
@@ -200,125 +113,94 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
   <div class="card">
     <h3>15 يوم الأولى – شعبان</h3>
     <button class="btn-main" onclick="selectOffer(this)">سجل الآن</button>
-    <button class="btn-details" onclick="showDetails(`
-      <b>المدة:</b> 15 يوم<br>
-      <b>الذهاب:</b> 19 فيفري<br>
-      <b>العودة:</b> 05 مارس<br>
-      <b>السعر:</b> 275000 دج<br>
-      <b>الفندق:</b> الجميزة<br>
-      <b>البعد عن الحرم:</b> 1.3 كلم
-    `)">تفاصيل الرحلة</button>
+    <button class="btn-details" onclick="alert('السعر: 275000 دج')">تفاصيل</button>
   </div>
 
   <div class="card">
     <h3>15 يوم الأخيرة – شعبان / رمضان</h3>
     <button class="btn-main" onclick="selectOffer(this)">سجل الآن</button>
-    <button class="btn-details" onclick="showDetails(`
-      <b>المدة:</b> 15 يوم<br>
-      <b>الذهاب:</b> 05 مارس<br>
-      <b>العودة:</b> 19 مارس<br>
-      <b>السعر:</b> 385000 دج<br>
-      <b>الفندق:</b> الجميزة<br>
-      <b>البعد عن الحرم:</b> 1.3 كلم
-    `)">تفاصيل الرحلة</button>
+    <button class="btn-details" onclick="alert('السعر: 385000 دج')">تفاصيل</button>
+  </div>
+
+  <div class="card">
+    <h3>أوائل رمضان</h3>
+    <button class="btn-main" onclick="selectOffer(this)">سجل الآن</button>
+    <button class="btn-details" onclick="alert('أوائل رمضان – إقامة قريبة من الحرم')">تفاصيل</button>
   </div>
 
   <div class="card">
     <h3>شهر رمضان كامل</h3>
     <button class="btn-main" onclick="selectOffer(this)">سجل الآن</button>
-    <button class="btn-details" onclick="showDetails(`
-      <b>المدة:</b> شهر كامل<br>
-      <b>الذهاب:</b> 26 فيفري<br>
-      <b>العودة:</b> 26 مارس<br>
-      <b>السعر:</b> 395000 دج<br>
-      <b>الفندق:</b> الجميزة<br>
-      <b>البعد عن الحرم:</b> 1.3 كلم
-    `)">تفاصيل الرحلة</button>
+    <button class="btn-details" onclick="alert('السعر: 395000 دج')">تفاصيل</button>
   </div>
 
-</div>
-
-<div class="info">
-  <div>✔ تأشيرة</div>
-  <div>✔ تذكرة طيران</div>
-  <div>✔ إقامة فندقية</div>
-  <div>✔ مرشدين معتمدين</div>
 </div>
 
 <form id="form">
 <h2>📝 تسجيل سريع</h2>
 
-<input type="text" name="name" id="name" placeholder="الاسم الكامل" required>
-<input type="tel" name="phone" id="phone" placeholder="رقم الهاتف" required>
-<input type="text" name="wilaya" id="wilaya" placeholder="الولاية" required>
+<input type="text" name="name" placeholder="الاسم الكامل" required>
+<input type="tel" name="phone" placeholder="رقم الهاتف" required>
+<input type="text" name="wilaya" placeholder="الولاية" required>
 
 <select name="offer" id="offer" required>
   <option value="">اختر العرض</option>
   <option>15 يوم الأولى – شعبان</option>
   <option>15 يوم الأخيرة – شعبان / رمضان</option>
+  <option>أوائل رمضان</option>
   <option>شهر رمضان كامل</option>
 </select>
 
 <button type="submit" class="submit">تأكيد التسجيل</button>
-<div class="success" id="success">✅ تم تسجيلك بنجاح، سنتصل بك قريبًا</div>
+
+<div class="msg loading" id="loading">
+⏳ جاري إرسال التسجيل…<br>
+🌿 لا تنسَ الاستغفار: <b>أستغفر الله العظيم</b>
+</div>
+
+<div class="msg success" id="success">
+✅ تم استلام طلبك بنجاح<br>
+سيتم الاتصال بك قريبًا
+</div>
+
+<div class="note">
+⚠️ <b>ملاحظة مهمة:</b><br>
+• هذا التسجيل <b>أولي</b> ولا يُعد تأكيدًا نهائيًا.<br>
+• يتم تأكيد التسجيل فقط بعد <b>دفع المبلغ</b> و<b>إرسال صورة جواز السفر</b> ساري المفعول.
+</div>
+
 </form>
 
 </section>
 
-<footer>© وكالة بوشوشة للسياحة و السفر</footer>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <div class="close" onclick="closeDetails()">✖</div>
-    <div id="modalText"></div>
-  </div>
-</div>
-
 <script>
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbyo4W3SecWeN58wKd9FE_RWkaF2higB-YmsdYFlRGhuqf9UBxDereqdGcuSOqcTPjEp/exec";
-
-const sidebar=document.getElementById("sidebar");
-const overlay=document.getElementById("overlay");
 const form=document.getElementById("form");
-const offer=document.getElementById("offer");
+const loading=document.getElementById("loading");
 const success=document.getElementById("success");
-const modal=document.getElementById("modal");
-const modalText=document.getElementById("modalText");
+const offer=document.getElementById("offer");
 
-function openMenu(){
-  sidebar.classList.add("active");
-  overlay.classList.add("active");
-}
-function closeMenu(){
-  sidebar.classList.remove("active");
-  overlay.classList.remove("active");
-}
 function selectOffer(btn){
-  offer.value=btn.parentElement.querySelector("h3").innerText;
+  offer.value = btn.parentElement.querySelector("h3").innerText;
   form.scrollIntoView({behavior:"smooth"});
-}
-function showDetails(text){
-  modalText.innerHTML=text;
-  modal.style.display="block";
-}
-function closeDetails(){
-  modal.style.display="none";
 }
 
 form.addEventListener("submit",e=>{
   e.preventDefault();
+  loading.style.display="block";
+  success.style.display="none";
+
   fetch(SCRIPT_URL,{
     method:"POST",
     body:new FormData(form)
   })
-  .then(r=>r.text())
-  .then(()=>{
+  .then(()=> {
+    loading.style.display="none";
     success.style.display="block";
     form.reset();
   })
   .catch(()=>{
-    alert("❌ حدث خطأ أثناء الإرسال");
+    loading.innerHTML="❌ حدث خطأ أثناء الإرسال";
   });
 });
 </script>
