@@ -149,8 +149,8 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
 
 <div class="sidebar" id="sidebar">
   <h3>القائمة</h3>
-  <a href="#">الرئيسية</a>
-  <a href="license.html">صفحة الترخيص</a>
+  <a href="#" onclick="closeMenu()">الرئيسية</a>
+  <a href="license.html" onclick="closeMenu()">صفحة الترخيص</a>
 </div>
 
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
@@ -167,44 +167,65 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
 
 <div class="offers">
 
+  <!-- 15 جانفي -->
   <div class="card">
     <h3>15 يوم رجب و شعبان</h3>
     <button class="btn-main"
-      onclick="selectOffer('15 يوم رجب و شعبان','15 جانفي','29 جانفي','225000 دج')">
-      سجل الآن
-    </button>
+      onclick="selectOffer(
+        '15 يوم رجب و شعبان',
+        '15 جانفي',
+        '29 جانفي',
+        '225000 دج',
+        'فندق سجى غزة – 750 م عن الحرم'
+      )">سجل الآن</button>
   </div>
 
   <div class="card">
     <h3>أسبوع شعبان + أسبوع رمضان</h3>
     <button class="btn-main"
-      onclick="selectOffer('أسبوع شعبان + أسبوع رمضان','غير محدد','غير محدد','يحدد لاحقًا')">
-      سجل الآن
-    </button>
+      onclick="selectOffer(
+        'أسبوع شعبان + أسبوع رمضان',
+        'غير محدد',
+        'غير محدد',
+        'يحدد لاحقًا',
+        'الجميزة – 1.3 كلم عن الحرم'
+      )">سجل الآن</button>
   </div>
 
   <div class="card">
     <h3>15 يوم الأولى</h3>
     <button class="btn-main"
-      onclick="selectOffer('15 يوم الأولى','19 فيفري','05 مارس','275000 دج')">
-      سجل الآن
-    </button>
+      onclick="selectOffer(
+        '15 يوم الأولى',
+        '19 فيفري',
+        '05 مارس',
+        '275000 دج',
+        'الجميزة – 1.3 كلم عن الحرم'
+      )">سجل الآن</button>
   </div>
 
   <div class="card">
     <h3>15 يوم الأخيرة</h3>
     <button class="btn-main"
-      onclick="selectOffer('15 يوم الأخيرة','05 مارس','19 مارس','385000 دج')">
-      سجل الآن
-    </button>
+      onclick="selectOffer(
+        '15 يوم الأخيرة',
+        '05 مارس',
+        '19 مارس',
+        '385000 دج',
+        'الجميزة – 1.3 كلم عن الحرم'
+      )">سجل الآن</button>
   </div>
 
   <div class="card">
     <h3>شهر رمضان كامل</h3>
     <button class="btn-main"
-      onclick="selectOffer('شهر رمضان كامل','26 فيفري','26 مارس','395000 دج')">
-      سجل الآن
-    </button>
+      onclick="selectOffer(
+        'شهر رمضان كامل',
+        '26 فيفري',
+        '26 مارس',
+        '395000 دج',
+        'الجميزة – 1.3 كلم عن الحرم'
+      )">سجل الآن</button>
   </div>
 
 </div>
@@ -217,7 +238,7 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
 <input type="text" name="wilaya" placeholder="الولاية" required>
 
 <input type="text" name="offer" id="offer" placeholder="العرض المختار" readonly required>
-<textarea name="details" id="details" rows="5" readonly placeholder="تفاصيل الرحلة"></textarea>
+<textarea name="details" id="details" rows="5" readonly></textarea>
 
 <button type="submit" class="submit">تأكيد التسجيل</button>
 
@@ -231,9 +252,8 @@ footer{text-align:center;padding:18px;font-size:13px;opacity:.8}
 </div>
 
 <div class="note">
-⚠️ <b>ملاحظة هامة:</b><br>
-التسجيل <b>أولي فقط</b> ولا يُعد تأكيدًا نهائيًا.<br>
-يتم التأكيد بعد <b>دفع المبلغ</b> و<b>إرسال نسخة من جواز السفر</b>.
+⚠️ التسجيل <b>أولي</b> ولا يتم التأكيد إلا بعد
+<b>دفع المبلغ</b> و<b>إرسال جواز السفر</b>.
 </div>
 
 </form>
@@ -262,13 +282,13 @@ function closeMenu(){
   overlay.classList.remove("active");
 }
 
-function selectOffer(name,go,back,price){
+function selectOffer(name,go,back,price,hotel){
   offer.value=name;
   details.value=
     "الذهاب: "+go+"\n"+
     "العودة: "+back+"\n"+
     "السعر: "+price+"\n"+
-    "السكن: الجميزة – 1.3 كلم عن الحرم";
+    "السكن: "+hotel;
   form.scrollIntoView({behavior:"smooth"});
 }
 
